@@ -1,0 +1,45 @@
+﻿{
+  "Context": {
+    "MessageHandler": {
+      "HandlerType": "System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+    },
+    "MessageBeingHandled": {},
+    "MessageMetadata": {
+      "MessageType": "System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+    },
+    "Builder": {},
+    "RepliedMessages": [
+      {
+        "Message": {
+          "Property": "Value"
+        },
+        "Options": {
+          "MessageId": null
+        }
+      }
+    ],
+    "MessageId": "Guid 1",
+    "ReplyToAddress": "reply address",
+    "SentMessages": [
+      {
+        "Message": {
+          "Property": "Value"
+        },
+        "Options": {
+          "MessageId": null
+        }
+      }
+    ],
+    "PublishedMessages": [
+      {
+        "Message": {
+          "Property": "Value"
+        },
+        "Options": {
+          "MessageId": null
+        }
+      }
+    ],
+    "Extensions": {}
+  }
+}

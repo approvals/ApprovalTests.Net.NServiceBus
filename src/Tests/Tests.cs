@@ -7,15 +7,6 @@ using Xunit;
 public class Tests
 {
     [Fact]
-    public void AssertAllContextHandled()
-    {
-        var handler = new Handler();
-        var context = new TestableMessageHandlerContext();
-
-        await handler.Handle(new MyMessage{Property = "Value"}, context);
-        NsbContextVerifier.Verify(context);
-    }
-    [Fact]
     public async Task MessageHandlerContext()
     {
         var handler = new Handler();

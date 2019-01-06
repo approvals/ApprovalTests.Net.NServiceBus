@@ -14,16 +14,14 @@ namespace NServiceBus.ApprovalTests
             jsonSerializerSettings = SerializerBuilder.BuildSettings();
             var converters = jsonSerializerSettings.Converters;
             converters.Add(new ExtendableOptionsConverter());
-            converters.Add(new MessageMetadataConverter());
-            converters.Add(new TransportOperationConverter());
+          //  converters.Add(new MessageMetadataConverter());
+          //  converters.Add(new TransportOperationConverter());
         }
 
         public static void Verify(TestableAuditContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper ,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
@@ -83,10 +81,9 @@ namespace NServiceBus.ApprovalTests
 
         public static void Verify(TestableInvokeHandlerContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
+            var wrapper = new ContextWrapper {Context = context, State = state};
 
-            ObjectApprover.VerifyWithJson(target,
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
@@ -111,5 +108,11 @@ namespace NServiceBus.ApprovalTests
                 {"State", state}
             };
         }
+    }
+
+    class ContextWrapper
+    {
+        public object Context;
+        public object State;
     }
 }
