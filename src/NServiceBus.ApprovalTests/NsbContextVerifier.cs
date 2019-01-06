@@ -11,6 +11,9 @@ namespace NServiceBus.ApprovalTests
 
         static NsbContextVerifier()
         {
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageHandler);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageBeingHandled);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageMetadata);
             jsonSerializerSettings = SerializerBuilder.BuildSettings();
             var converters = jsonSerializerSettings.Converters;
             converters.Add(new ExtendableOptionsConverter());
