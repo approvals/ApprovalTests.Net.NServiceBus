@@ -1,4 +1,4 @@
-#### <img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.ApprovalTests/master/src/icon.png" height="25px"> Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to [NServiceBus](https://docs.particular.net/nservicebus/).
+### <img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.ApprovalTests/master/src/icon.png" height="25px"> Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to [NServiceBus](https://docs.particular.net/nservicebus/).
 
 <!--- StartOpenCollectiveBackers -->
 
