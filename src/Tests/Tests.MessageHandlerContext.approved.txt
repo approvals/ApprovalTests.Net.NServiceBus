@@ -1,5 +1,0 @@
-﻿{
-  "MessageId": "Guid 1",
-  "ReplyToAddress": "reply address",
-  "Extensions": {}
-}
