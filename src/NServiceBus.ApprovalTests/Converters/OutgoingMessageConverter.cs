@@ -9,14 +9,21 @@ class OutgoingMessageConverter : JsonConverter
     {
         writer.WriteStartObject();
 
-        var message = OutgoingMessageHelper.GetMessage(value);
+        WriteBaseMembers(writer, value, serializer);
 
-        writer.WritePropertyName("Message");
-        serializer.Serialize(writer, message);
+        writer.WriteEndObject();
+    }
+
+    public static void WriteBaseMembers(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        var message = OutgoingMessageHelper.GetMessage(value);
 
         writer.WritePropertyName("MessageType");
         var type = message.GetType();
         serializer.Serialize(writer, type.FullName);
+
+        writer.WritePropertyName("Message");
+        serializer.Serialize(writer, message);
 
         var options = OutgoingMessageHelper.GetOptions(value);
         if (options.HasValue())
@@ -24,8 +31,6 @@ class OutgoingMessageConverter : JsonConverter
             writer.WritePropertyName("Options");
             serializer.Serialize(writer, options);
         }
-
-        writer.WriteEndObject();
     }
 
     public override object ReadJson(JsonReader reader, Type type, object value, JsonSerializer serializer)
@@ -38,8 +43,8 @@ class OutgoingMessageConverter : JsonConverter
         var baseType = type.BaseType;
         if (baseType != null && baseType.IsGenericType)
         {
-            var genericTypeDefinition = baseType.GetGenericTypeDefinition();
-            return genericTypeDefinition==typeof(OutgoingMessage<,>);
+            var typeDefinition = baseType.GetGenericTypeDefinition();
+            return typeDefinition == typeof(OutgoingMessage<,>);
         }
 
         return false;

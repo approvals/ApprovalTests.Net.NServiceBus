@@ -1,18 +1,27 @@
 ﻿{
   "SentMessages": [
     {
+      "MessageType": "SendMessage",
       "Message": {
         "Property": "Value"
+      }
+    },
+    {
+      "MessageType": "SendMessage",
+      "Message": {
+        "Property": "ValueWithDelay"
       },
-      "MessageType": "SendMessage"
+      "Options": {
+        "DeliveryDelay": "1.00:00:00"
+      }
     }
   ],
   "PublishedMessages": [
     {
+      "MessageType": "PublishMessage",
       "Message": {
         "Property": "Value"
-      },
-      "MessageType": "PublishMessage"
+      }
     }
   ],
   "Extensions": {}

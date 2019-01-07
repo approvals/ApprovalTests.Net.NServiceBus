@@ -203,8 +203,11 @@ public class Tests
     public async Task PipelineContext()
     {
         var context = new TestablePipelineContext();
-        await context.Publish(new PublishMessage {Property = "Value"});
-        await context.Send(new SendMessage {Property = "Value"});
+        await context.Publish(new PublishMessage { Property = "Value" });
+        await context.Send(new SendMessage { Property = "Value" });
+        var options = new SendOptions();
+        options.DelayDeliveryWith(TimeSpan.FromDays(1));
+        await context.Send(new SendMessage {Property = "ValueWithDelay"},options);
         TestContextVerifier.Verify(context);
     }
 

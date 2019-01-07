@@ -12,6 +12,13 @@ static class ExtendableOptionsHelper
             return true;
         }
 
+        if (options is SendOptions sendOptions)
+        {
+            if (sendOptions.GetDeliveryDate().HasValue || sendOptions.GetDeliveryDelay().HasValue)
+            {
+                return true;
+            }
+        }
         var headers = options.GetHeaders();
         if (headers.Any())
         {

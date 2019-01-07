@@ -24,8 +24,10 @@ namespace NServiceBus.ApprovalTests
             var settings = SerializerBuilder.BuildSettings();
             var converters = settings.Converters;
             converters.Add(new ContextBagConverter());
+            converters.Add(new SendOptionsConverter());
             converters.Add(new ExtendableOptionsConverter());
             converters.Add(new UnsubscriptionConverter());
+            converters.Add(new TimeoutMessageConverter());
             converters.Add(new SubscriptionConverter());
             converters.Add(new OutgoingMessageConverter());
             converters.Add(new TypeConverter());

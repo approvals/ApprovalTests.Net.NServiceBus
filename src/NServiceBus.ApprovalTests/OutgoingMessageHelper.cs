@@ -11,6 +11,16 @@ static class OutgoingMessageHelper
         return (ExtendableOptions) GetPropertyValue(target, "Options");
     }
 
+    public static TimeSpan? GetWithin(object target)
+    {
+        return (TimeSpan?) GetPropertyValue(target, "Within");
+    }
+
+    public static DateTimeOffset? GetAt(object target)
+    {
+        return (DateTimeOffset?) GetPropertyValue(target, "At");
+    }
+
     public static object GetMessage(object target)
     {
         return GetPropertyValue(target, "Message");
