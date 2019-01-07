@@ -1,0 +1,12 @@
+﻿{
+  "ReceiveOperationAborted": true,
+  "Message": {
+    "MessageId": "MessageId",
+    "Headers": {
+      "key": "value",
+      "NServiceBus.MessageId": "MessageId"
+    },
+    "Body": "AQ=="
+  },
+  "Extensions": {}
+}

@@ -1,0 +1,4 @@
+﻿{
+  "EndpointStopped": true,
+  "Extensions": {}
+}

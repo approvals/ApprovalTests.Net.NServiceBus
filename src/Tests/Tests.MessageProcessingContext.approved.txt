@@ -1,0 +1,35 @@
+﻿{
+  "RepliedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {}
+    }
+  ],
+  "ForwardedMessages": [
+    "newDestination"
+  ],
+  "MessageHeaders": {
+    "Key": "Value"
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "SentMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {}
+    }
+  ],
+  "PublishedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {}
+    }
+  ],
+  "Extensions": {}
+}

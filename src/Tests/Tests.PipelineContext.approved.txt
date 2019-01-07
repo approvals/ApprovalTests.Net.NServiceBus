@@ -1,0 +1,19 @@
+﻿{
+  "SentMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {}
+    }
+  ],
+  "PublishedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {}
+    }
+  ],
+  "Extensions": {}
+}

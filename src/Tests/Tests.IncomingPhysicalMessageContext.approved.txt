@@ -1,0 +1,13 @@
+﻿{
+  "Message": {
+    "MessageId": "MessageId",
+    "Headers": {
+      "key": "value",
+      "NServiceBus.MessageId": "MessageId"
+    },
+    "Body": "AQ=="
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "Extensions": {}
+}
