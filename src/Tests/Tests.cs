@@ -23,7 +23,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableAuditContext()
+    public void AuditContext()
     {
         var context = new TestableAuditContext();
         context.AddedAuditData.Add("Key", "Value");
@@ -31,7 +31,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableBatchDispatchContext()
+    public void BatchDispatchContext()
     {
         var context = new TestableBatchDispatchContext();
         context.Operations.Add(BuildTransportOperation());
@@ -40,7 +40,7 @@ public class Tests
 
 
     [Fact]
-    public void TestableBehaviorContext()
+    public void BehaviorContext()
     {
         var context = new TestableBehaviorContextImp();
         context.Extensions.AddDeliveryConstraint(new DelayDeliveryWith(TimeSpan.FromDays(1)));
@@ -52,7 +52,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableDispatchContext()
+    public void DispatchContext()
     {
         var context = new TestableDispatchContext();
         context.Operations.Add(BuildTransportOperation());
@@ -60,7 +60,7 @@ public class Tests
     }
 
     [Fact]
-    public async Task TestableEndpointInstance()
+    public async Task EndpointInstance()
     {
         var context = new TestableEndpointInstance();
         await context.Stop();
@@ -68,7 +68,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableForwardingContext()
+    public void ForwardingContext()
     {
         var context = new TestableForwardingContext
         {
@@ -78,9 +78,8 @@ public class Tests
         TestContextVerifier.Verify(context);
     }
 
-
     [Fact]
-    public void TestableIncomingLogicalMessageContext()
+    public void IncomingLogicalMessageContext()
     {
         var context = new TestableIncomingLogicalMessageContext
         {
@@ -91,7 +90,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableIncomingPhysicalMessageContext()
+    public void IncomingPhysicalMessageContext()
     {
         var context = new TestableIncomingPhysicalMessageContext
         {
@@ -101,7 +100,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableInvokeHandlerContext()
+    public void InvokeHandlerContext()
     {
         var context = new TestableInvokeHandlerContext
         {
@@ -111,14 +110,14 @@ public class Tests
     }
 
     [Fact]
-    public void TestableMessageHandlerContext()
+    public void MessageHandlerContext()
     {
         var context = new TestableMessageHandlerContext();
         TestContextVerifier.Verify(context);
     }
 
     [Fact]
-    public async Task TestableMessageProcessingContext()
+    public async Task MessageProcessingContext()
     {
         var context = new TestableMessageProcessingContext();
         context.MessageHeaders.Add("Key", "Value");
@@ -130,7 +129,7 @@ public class Tests
     }
 
     [Fact]
-    public async Task TestableMessageSession()
+    public async Task MessageSession()
     {
         var context = new TestableMessageSession();
         var subscribeOptions = new SubscribeOptions();
@@ -143,7 +142,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingContext()
+    public void OutgoingContext()
     {
         var context = new TestableOutgoingContext();
         context.Headers.Add("Key", "Value");
@@ -151,7 +150,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingLogicalMessageContext()
+    public void OutgoingLogicalMessageContext()
     {
         var context = new TestableOutgoingLogicalMessageContext
         {
@@ -161,7 +160,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingPhysicalMessageContext()
+    public void OutgoingPhysicalMessageContext()
     {
         var context = new TestableOutgoingPhysicalMessageContext
         {
@@ -171,7 +170,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingPublishContext()
+    public void OutgoingPublishContext()
     {
         var context = new TestableOutgoingPublishContext
         {
@@ -181,7 +180,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingReplyContext()
+    public void OutgoingReplyContext()
     {
         var context = new TestableOutgoingReplyContext
         {
@@ -191,7 +190,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableOutgoingSendContext()
+    public void OutgoingSendContext()
     {
         var context = new TestableOutgoingSendContext
         {
@@ -201,7 +200,7 @@ public class Tests
     }
 
     [Fact]
-    public async Task TestablePipelineContext()
+    public async Task PipelineContext()
     {
         var context = new TestablePipelineContext();
         await context.Publish(new PublishMessage {Property = "Value"});
@@ -210,7 +209,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableRoutingContext()
+    public void RoutingContext()
     {
         var context = new TestableRoutingContext
         {
@@ -220,7 +219,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableSubscribeContext()
+    public void SubscribeContext()
     {
         var context = new TestableSubscribeContext
         {
@@ -230,7 +229,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableTransportReceiveContext()
+    public void TransportReceiveContext()
     {
         var context = new TestableTransportReceiveContext
         {
@@ -240,7 +239,7 @@ public class Tests
     }
 
     [Fact]
-    public void TestableUnsubscribeContext()
+    public void UnsubscribeContext()
     {
         var context = new TestableUnsubscribeContext
         {
