@@ -1,0 +1,33 @@
+﻿{
+  "Context": {
+    "Subscriptions": [
+      {
+        "Message": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+        "Options": {
+          "Extensions": {
+            "Stash": {
+              "NServiceBus.RoutingToDispatchConnector+State": {
+                "ImmediateDispatch": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Unsubscription": [
+      {
+        "Message": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+        "Options": {
+          "Extensions": {
+            "Stash": {
+              "NServiceBus.RoutingToDispatchConnector+State": {
+                "ImmediateDispatch": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Extensions": {}
+  }
+}

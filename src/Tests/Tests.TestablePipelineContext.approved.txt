@@ -1,0 +1,25 @@
+﻿{
+  "Context": {
+    "SentMessages": [
+      {
+        "Message": {
+          "Property": "Value"
+        },
+        "Options": {
+          "Extensions": {}
+        }
+      }
+    ],
+    "PublishedMessages": [
+      {
+        "Message": {
+          "Property": "Value"
+        },
+        "Options": {
+          "Extensions": {}
+        }
+      }
+    ],
+    "Extensions": {}
+  }
+}

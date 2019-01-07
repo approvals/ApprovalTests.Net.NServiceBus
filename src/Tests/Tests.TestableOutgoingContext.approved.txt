@@ -1,0 +1,9 @@
+﻿{
+  "Context": {
+    "MessageId": "Guid 1",
+    "Headers": {
+      "Key": "Value"
+    },
+    "Extensions": {}
+  }
+}

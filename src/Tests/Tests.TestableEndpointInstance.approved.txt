@@ -1,0 +1,6 @@
+﻿{
+  "Context": {
+    "EndpointStopped": true,
+    "Extensions": {}
+  }
+}

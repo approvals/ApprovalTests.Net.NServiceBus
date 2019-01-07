@@ -1,84 +1,85 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using NServiceBus.ObjectBuilder;
 using NServiceBus.Testing;
 using ObjectApproval;
 
 namespace NServiceBus.ApprovalTests
 {
-    public static class NsbContextVerifier
+    public static class TestContextVerifier
     {
         static JsonSerializerSettings jsonSerializerSettings;
 
-        static NsbContextVerifier()
+        static TestContextVerifier()
         {
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageHandler);
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageBeingHandled);
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x=> x.MessageMetadata);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageHandler);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageBeingHandled);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageMetadata);
+            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.HandleCurrentMessageLaterWasCalled);
+            SerializerBuilder.AddIgnore<TestableOutgoingLogicalMessageContext>(x => x.RoutingStrategies);
+            SerializerBuilder.AddIgnore<TestableOutgoingPhysicalMessageContext>(x => x.RoutingStrategies);
+            SerializerBuilder.AddIgnore<TestableRoutingContext>(x => x.RoutingStrategies);
+            SerializerBuilder.AddIgnore<IBuilder>();
             jsonSerializerSettings = SerializerBuilder.BuildSettings();
             var converters = jsonSerializerSettings.Converters;
+            converters.Add(new ContextBagConverter());
             converters.Add(new ExtendableOptionsConverter());
-          //  converters.Add(new MessageMetadataConverter());
-          //  converters.Add(new TransportOperationConverter());
         }
 
         public static void Verify(TestableAuditContext context, object state = null)
         {
             var wrapper = new ContextWrapper {Context = context, State = state};
-            ObjectApprover.VerifyWithJson(wrapper ,
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
         public static void Verify(TestableBatchDispatchContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
-        public static void Verify(TestableBehaviorContext context, object state = null)
+        public static void Verify(TestableBehaviorContext  context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
         public static void Verify(TestableDispatchContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
         public static void Verify(TestableEndpointInstance context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
         public static void Verify(TestableForwardingContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
-        public static void Verify(TestableIncomingContext context, object state = null)
+        public static void Verify(TestableIncomingLogicalMessageContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
+            var wrapper = new ContextWrapper {Context = context, State = state};
 
-            ObjectApprover.VerifyWithJson(target,
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableIncomingPhysicalMessageContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
@@ -90,32 +91,109 @@ namespace NServiceBus.ApprovalTests
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
-        public static void Verify(TestableMessageSession context, object state = null)
+        public static void Verify(TestableMessageHandlerContext context, object state = null)
         {
-            var target = BuildTarget(state);
-            ContextAdder.AddContext(context, target);
-
-            ObjectApprover.VerifyWithJson(target,
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
                 jsonSerializerSettings: jsonSerializerSettings);
         }
 
-        static Dictionary<string, object> BuildTarget(object state)
+        public static void Verify(TestableMessageProcessingContext context, object state = null)
         {
-            if (state == null)
-            {
-                return new Dictionary<string, object>();
-            }
-
-            return new Dictionary<string, object>
-            {
-                {"State", state}
-            };
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
         }
-    }
 
-    class ContextWrapper
-    {
-        public object Context;
-        public object State;
+        public static void Verify(TestableMessageSession context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingLogicalMessageContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingPhysicalMessageContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingPublishContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingReplyContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableOutgoingSendContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestablePipelineContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableRoutingContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableSubscribeContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableTransportReceiveContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        public static void Verify(TestableUnsubscribeContext context, object state = null)
+        {
+            var wrapper = new ContextWrapper {Context = context, State = state};
+            ObjectApprover.VerifyWithJson(wrapper,
+                jsonSerializerSettings: jsonSerializerSettings);
+        }
+
+        //public static void Verify(TestingLoggerFactory context, object state = null)
+        //{
+        //    var wrapper = new ContextWrapper {Context = context, State = state};
+        //    ObjectApprover.VerifyWithJson(wrapper,
+        //        jsonSerializerSettings: jsonSerializerSettings);
+        //}
     }
 }

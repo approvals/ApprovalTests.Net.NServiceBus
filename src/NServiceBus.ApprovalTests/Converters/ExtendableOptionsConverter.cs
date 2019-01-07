@@ -12,14 +12,26 @@ class ExtendableOptionsConverter : JsonConverter
         var options = (ExtendableOptions) value;
         writer.WriteStartObject();
 
-        writer.WritePropertyName("MessageId");
-        serializer.Serialize(writer, options.GetMessageId());
+        var messageId = options.GetMessageId();
+        if (messageId != null)
+        {
+            writer.WritePropertyName("MessageId");
+            serializer.Serialize(writer, messageId);
+        }
         var headers = options.GetHeaders();
         if (headers.Any())
         {
             writer.WritePropertyName("Headers");
             serializer.Serialize(writer, headers);
         }
+
+        var extensions = options.GetExtensions();
+        if (extensions != null)
+        {
+            writer.WritePropertyName("Extensions");
+            serializer.Serialize(writer, extensions);
+        }
+
         writer.WriteEndObject();
     }
 

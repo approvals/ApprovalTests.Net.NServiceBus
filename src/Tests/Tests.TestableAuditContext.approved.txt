@@ -1,0 +1,12 @@
+﻿{
+  "Context": {
+    "AddedAuditData": {
+      "Key": "Value"
+    },
+    "AuditAddress": "audit queue address",
+    "Message": {
+      "MessageId": "Guid 1"
+    },
+    "Extensions": {}
+  }
+}
