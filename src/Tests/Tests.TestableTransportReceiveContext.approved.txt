@@ -1,14 +1,12 @@
 ﻿{
-  "Context": {
-    "ReceiveOperationAborted": true,
-    "Message": {
-      "MessageId": "MessageId",
-      "Headers": {
-        "key": "value",
-        "NServiceBus.MessageId": "MessageId"
-      },
-      "Body": "AQ=="
+  "ReceiveOperationAborted": true,
+  "Message": {
+    "MessageId": "MessageId",
+    "Headers": {
+      "key": "value",
+      "NServiceBus.MessageId": "MessageId"
     },
-    "Extensions": {}
-  }
+    "Body": "AQ=="
+  },
+  "Extensions": {}
 }

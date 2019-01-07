@@ -1,10 +1,8 @@
 ﻿{
-  "Context": {
-    "Headers": {
-      "Key": "Value"
-    },
-    "MessageId": "Guid 1",
-    "ReplyToAddress": "reply address",
-    "Extensions": {}
-  }
+  "Headers": {
+    "Key": "Value"
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "Extensions": {}
 }

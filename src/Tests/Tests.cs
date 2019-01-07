@@ -15,6 +15,14 @@ using Xunit;
 public class Tests
 {
     [Fact]
+    public void ExtraState()
+    {
+        var context = new TestableAuditContext();
+        context.AddedAuditData.Add("Key", "Value");
+        TestContextVerifier.Verify(context, new {Property="Value"});
+    }
+
+    [Fact]
     public void TestableAuditContext()
     {
         var context = new TestableAuditContext();

@@ -1,19 +1,17 @@
 ﻿{
-  "Context": {
-    "Message": {
-      "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
-      "Metadata": {
-        "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9"
-      },
-      "Instance": {
-        "Property": "Value"
-      }
+  "Message": {
+    "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+    "Metadata": {
+      "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9"
     },
-    "Headers": {
-      "Key": "Value"
-    },
-    "MessageId": "Guid 1",
-    "ReplyToAddress": "reply address",
-    "Extensions": {}
-  }
+    "Instance": {
+      "Property": "Value"
+    }
+  },
+  "Headers": {
+    "Key": "Value"
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "Extensions": {}
 }

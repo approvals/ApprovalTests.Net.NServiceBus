@@ -1,12 +1,10 @@
 ﻿{
-  "Context": {
-    "Message": {
-      "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
-      "Instance": {
-        "Property": "Value"
-      }
-    },
-    "MessageId": "Guid 1",
-    "Extensions": {}
-  }
+  "Message": {
+    "MessageType": "MyMessage, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+    "Instance": {
+      "Property": "Value"
+    }
+  },
+  "MessageId": "Guid 1",
+  "Extensions": {}
 }

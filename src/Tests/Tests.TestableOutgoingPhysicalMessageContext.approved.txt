@@ -1,7 +1,5 @@
 ﻿{
-  "Context": {
-    "Body": "AQ==",
-    "MessageId": "Guid 1",
-    "Extensions": {}
-  }
+  "Body": "AQ==",
+  "MessageId": "Guid 1",
+  "Extensions": {}
 }

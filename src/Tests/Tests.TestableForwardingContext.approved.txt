@@ -1,13 +1,11 @@
 ﻿{
-  "Context": {
-    "Message": {
-      "Body": "AQ==",
-      "MessageId": "MessageId",
-      "Headers": {
-        "key": "value"
-      }
-    },
-    "Address": "The address",
-    "Extensions": {}
-  }
+  "Message": {
+    "Body": "AQ==",
+    "MessageId": "MessageId",
+    "Headers": {
+      "key": "value"
+    }
+  },
+  "Address": "The address",
+  "Extensions": {}
 }

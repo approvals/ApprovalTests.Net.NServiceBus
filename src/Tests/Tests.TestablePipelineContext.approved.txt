@@ -1,25 +1,23 @@
 ﻿{
-  "Context": {
-    "SentMessages": [
-      {
-        "Message": {
-          "Property": "Value"
-        },
-        "Options": {
-          "Extensions": {}
-        }
+  "SentMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {
+        "Extensions": {}
       }
-    ],
-    "PublishedMessages": [
-      {
-        "Message": {
-          "Property": "Value"
-        },
-        "Options": {
-          "Extensions": {}
-        }
+    }
+  ],
+  "PublishedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {
+        "Extensions": {}
       }
-    ],
-    "Extensions": {}
-  }
+    }
+  ],
+  "Extensions": {}
 }

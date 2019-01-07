@@ -1,43 +1,41 @@
 ﻿{
-  "Context": {
-    "RepliedMessages": [
-      {
-        "Message": {
-          "Property": "Value"
-        },
-        "Options": {
-          "Extensions": {}
-        }
+  "RepliedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {
+        "Extensions": {}
       }
-    ],
-    "ForwardedMessages": [
-      "newDestination"
-    ],
-    "MessageHeaders": {
-      "Key": "Value"
-    },
-    "MessageId": "Guid 1",
-    "ReplyToAddress": "reply address",
-    "SentMessages": [
-      {
-        "Message": {
-          "Property": "Value"
-        },
-        "Options": {
-          "Extensions": {}
-        }
+    }
+  ],
+  "ForwardedMessages": [
+    "newDestination"
+  ],
+  "MessageHeaders": {
+    "Key": "Value"
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "SentMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {
+        "Extensions": {}
       }
-    ],
-    "PublishedMessages": [
-      {
-        "Message": {
-          "Property": "Value"
-        },
-        "Options": {
-          "Extensions": {}
-        }
+    }
+  ],
+  "PublishedMessages": [
+    {
+      "Message": {
+        "Property": "Value"
+      },
+      "Options": {
+        "Extensions": {}
       }
-    ],
-    "Extensions": {}
-  }
+    }
+  ],
+  "Extensions": {}
 }

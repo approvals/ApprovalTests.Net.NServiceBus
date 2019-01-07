@@ -1,15 +1,13 @@
 ﻿{
-  "Context": {
-    "Message": {
-      "MessageId": "MessageId",
-      "Headers": {
-        "key": "value",
-        "NServiceBus.MessageId": "MessageId"
-      },
-      "Body": "AQ=="
+  "Message": {
+    "MessageId": "MessageId",
+    "Headers": {
+      "key": "value",
+      "NServiceBus.MessageId": "MessageId"
     },
-    "MessageId": "Guid 1",
-    "ReplyToAddress": "reply address",
-    "Extensions": {}
-  }
+    "Body": "AQ=="
+  },
+  "MessageId": "Guid 1",
+  "ReplyToAddress": "reply address",
+  "Extensions": {}
 }

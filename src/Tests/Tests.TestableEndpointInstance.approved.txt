@@ -1,6 +1,4 @@
 ﻿{
-  "Context": {
-    "EndpointStopped": true,
-    "Extensions": {}
-  }
+  "EndpointStopped": true,
+  "Extensions": {}
 }

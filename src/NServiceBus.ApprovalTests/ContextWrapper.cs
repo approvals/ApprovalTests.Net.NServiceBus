@@ -2,7 +2,7 @@
 {
     class ContextWrapper
     {
-        public object Context;
-        public object State;
+        public object ExtraState;
+        public object NsbTestContext;
     }
 }
