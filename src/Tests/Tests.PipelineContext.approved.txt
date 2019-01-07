@@ -4,7 +4,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {}
+      "MessageType": "SendMessage"
     }
   ],
   "PublishedMessages": [
@@ -12,7 +12,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {}
+      "MessageType": "PublishMessage"
     }
   ],
   "Extensions": {}

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using NServiceBus.Extensibility;
 
-class ContextBagHelper
+static class ContextBagHelper
 {
     static FieldInfo stashField;
     static FieldInfo parentBagField;

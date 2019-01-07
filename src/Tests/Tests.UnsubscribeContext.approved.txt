@@ -1,4 +1,4 @@
 ﻿{
-  "EventType": "MyMessage, Tests, Version=1.0.1.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+  "EventType": "MyMessage",
   "Extensions": {}
 }

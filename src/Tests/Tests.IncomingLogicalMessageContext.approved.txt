@@ -1,8 +1,8 @@
 ﻿{
   "Message": {
-    "MessageType": "MyMessage, Tests, Version=1.0.1.0, Culture=neutral, PublicKeyToken=59ef55776b573da9",
+    "MessageType": "MyMessage",
     "Metadata": {
-      "MessageType": "MyMessage, Tests, Version=1.0.1.0, Culture=neutral, PublicKeyToken=59ef55776b573da9"
+      "MessageType": "MyMessage"
     },
     "Instance": {
       "Property": "Value"

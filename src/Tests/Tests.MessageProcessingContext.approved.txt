@@ -4,7 +4,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {}
+      "MessageType": "ReplyMessage"
     }
   ],
   "ForwardedMessages": [
@@ -20,7 +20,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {}
+      "MessageType": "SendMessage"
     }
   ],
   "PublishedMessages": [
@@ -28,7 +28,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {}
+      "MessageType": "PublishMessage"
     }
   ],
   "Extensions": {}

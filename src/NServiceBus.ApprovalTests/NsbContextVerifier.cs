@@ -25,6 +25,10 @@ namespace NServiceBus.ApprovalTests
             var converters = settings.Converters;
             converters.Add(new ContextBagConverter());
             converters.Add(new ExtendableOptionsConverter());
+            converters.Add(new UnsubscriptionConverter());
+            converters.Add(new SubscriptionConverter());
+            converters.Add(new OutgoingMessageConverter());
+            converters.Add(new TypeConverter());
             return settings;
         }
 
