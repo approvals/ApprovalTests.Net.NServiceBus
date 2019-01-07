@@ -6,6 +6,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PackageTags>NServiceBus, ApprovalTests</PackageTags>
+    <Description> Adds ApprovalTests (https://github.com/approvals/ApprovalTests.Net) support to NServiceBus (https://docs.particular.net/nservicebus/).</Description>
     <PackageIconUrl>https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.ApprovalTests/master/src/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://docs.particular.net/nuget/NServiceBus.ApprovalTests</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NServiceBusExtensions/NServiceBus.ApprovalTests</RepositoryUrl>
