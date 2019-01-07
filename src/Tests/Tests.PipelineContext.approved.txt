@@ -1,14 +1,12 @@
 ﻿{
   "SentMessages": [
     {
-      "MessageType": "SendMessage",
-      "Message": {
+      "SendMessage": {
         "Property": "Value"
       }
     },
     {
-      "MessageType": "SendMessage",
-      "Message": {
+      "SendMessage": {
         "Property": "ValueWithDelay"
       },
       "Options": {
@@ -18,8 +16,7 @@
   ],
   "PublishedMessages": [
     {
-      "MessageType": "PublishMessage",
-      "Message": {
+      "PublishMessage": {
         "Property": "Value"
       }
     }

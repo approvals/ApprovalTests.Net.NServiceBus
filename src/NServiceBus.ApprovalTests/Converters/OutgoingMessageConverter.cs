@@ -18,11 +18,9 @@ class OutgoingMessageConverter : JsonConverter
     {
         var message = OutgoingMessageHelper.GetMessage(value);
 
-        writer.WritePropertyName("MessageType");
         var type = message.GetType();
-        serializer.Serialize(writer, type.FullName);
 
-        writer.WritePropertyName("Message");
+        writer.WritePropertyName(type.FullName);
         serializer.Serialize(writer, message);
 
         var options = OutgoingMessageHelper.GetOptions(value);

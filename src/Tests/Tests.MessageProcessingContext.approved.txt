@@ -1,8 +1,7 @@
 ﻿{
   "RepliedMessages": [
     {
-      "MessageType": "ReplyMessage",
-      "Message": {
+      "ReplyMessage": {
         "Property": "Value"
       }
     }
@@ -17,16 +16,14 @@
   "ReplyToAddress": "reply address",
   "SentMessages": [
     {
-      "MessageType": "SendMessage",
-      "Message": {
+      "SendMessage": {
         "Property": "Value"
       }
     }
   ],
   "PublishedMessages": [
     {
-      "MessageType": "PublishMessage",
-      "Message": {
+      "PublishMessage": {
         "Property": "Value"
       }
     }
