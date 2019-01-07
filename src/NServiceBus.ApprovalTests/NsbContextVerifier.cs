@@ -18,6 +18,7 @@ namespace NServiceBus.ApprovalTests
             SerializerBuilder.AddIgnore<TestableRoutingContext>(x => x.RoutingStrategies);
             SerializerBuilder.AddIgnore<IBuilder>();
         }
+
         static JsonSerializerSettings BuildSerializer()
         {
             var settings = SerializerBuilder.BuildSettings();
@@ -34,11 +35,13 @@ namespace NServiceBus.ApprovalTests
 
         static void InnerVerify(object context, object state)
         {
+            Guard.AgainstNull(context, nameof(context));
             if (state == null)
             {
                 ObjectApprover.VerifyWithJson(context, jsonSerializerSettings: BuildSerializer());
                 return;
             }
+
             var wrapper = new ContextWrapper
             {
                 NsbTestContext = context,
@@ -52,7 +55,7 @@ namespace NServiceBus.ApprovalTests
             InnerVerify(context, state);
         }
 
-        public static void Verify(TestableBehaviorContext  context, object state = null)
+        public static void Verify(TestableBehaviorContext context, object state = null)
         {
             InnerVerify(context, state);
         }
