@@ -4,9 +4,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {
-        "Extensions": {}
-      }
+      "Options": {}
     }
   ],
   "ForwardedMessages": [
@@ -22,9 +20,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {
-        "Extensions": {}
-      }
+      "Options": {}
     }
   ],
   "PublishedMessages": [
@@ -32,9 +28,7 @@
       "Message": {
         "Property": "Value"
       },
-      "Options": {
-        "Extensions": {}
-      }
+      "Options": {}
     }
   ],
   "Extensions": {}

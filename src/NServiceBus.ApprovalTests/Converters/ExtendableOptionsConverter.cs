@@ -28,8 +28,11 @@ class ExtendableOptionsConverter : JsonConverter
         var extensions = options.GetExtensions();
         if (extensions != null)
         {
-            writer.WritePropertyName("Extensions");
-            serializer.Serialize(writer, extensions);
+            if (ContextBagHelper.HasContent(extensions))
+            {
+                writer.WritePropertyName("Extensions");
+                serializer.Serialize(writer, extensions);
+            }
         }
 
         writer.WriteEndObject();

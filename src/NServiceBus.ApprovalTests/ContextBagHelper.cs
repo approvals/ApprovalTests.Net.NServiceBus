@@ -15,6 +15,21 @@ class ContextBagHelper
         parentBagField = typeof(ContextBag).GetField("parentBag", bindingFlags);
     }
 
+    public static bool HasContent(ContextBag contextBag)
+    {
+        if (TryGetStash(contextBag, out _))
+        {
+            return true;
+        }
+
+        if (TryGetParentBag(contextBag, out var parent))
+        {
+            return HasContent(parent);
+        }
+
+        return false;
+    }
+
     public static bool TryGetStash(object value, out Dictionary<string, object> stash)
     {
         stash = (Dictionary<string, object>) stashField.GetValue(value);
