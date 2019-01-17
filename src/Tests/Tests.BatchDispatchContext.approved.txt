@@ -1,23 +1,23 @@
 ﻿{
-  "Operations": [
+  Operations: [
     {
-      "Message": {
-        "Body": "AQ==",
-        "MessageId": "MessageId",
-        "Headers": {
-          "key": "value"
+      Message: {
+        Body: 'AQ==',
+        MessageId: 'MessageId',
+        Headers: {
+          key: 'value'
         }
       },
-      "AddressTag": {
-        "Destination": "destination"
+      AddressTag: {
+        Destination: 'destination'
       },
-      "DeliveryConstraints": [
+      DeliveryConstraints: [
         {
-          "Delay": "1.00:00:00"
+          Delay: '1.00:00:00'
         }
       ],
-      "RequiredDispatchConsistency": "Isolated"
+      RequiredDispatchConsistency: 'Isolated'
     }
   ],
-  "Extensions": {}
+  Extensions: {}
 }

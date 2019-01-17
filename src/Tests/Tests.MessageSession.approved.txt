@@ -1,31 +1,31 @@
 ﻿{
-  "Subscriptions": [
+  Subscriptions: [
     {
-      "MessageType": "MyMessage",
-      "Options": {
-        "Extensions": {
-          "Stash": {
-            "NServiceBus.RoutingToDispatchConnector+State": {
-              "ImmediateDispatch": true
+      MessageType: 'MyMessage',
+      Options: {
+        Extensions: {
+          Stash: {
+            NServiceBus.RoutingToDispatchConnector+State: {
+              ImmediateDispatch: true
             }
           }
         }
       }
     }
   ],
-  "Unsubscription": [
+  Unsubscription: [
     {
-      "MessageType": "MyMessage",
-      "Options": {
-        "Extensions": {
-          "Stash": {
-            "NServiceBus.RoutingToDispatchConnector+State": {
-              "ImmediateDispatch": true
+      MessageType: 'MyMessage',
+      Options: {
+        Extensions: {
+          Stash: {
+            NServiceBus.RoutingToDispatchConnector+State: {
+              ImmediateDispatch: true
             }
           }
         }
       }
     }
   ],
-  "Extensions": {}
+  Extensions: {}
 }

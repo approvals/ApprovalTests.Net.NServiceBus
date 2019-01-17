@@ -1,10 +1,10 @@
 ﻿{
-  "Message": {
-    "MessageType": "MyMessage",
-    "Instance": {
-      "Property": "Value"
+  Message: {
+    MessageType: 'MyMessage',
+    Instance: {
+      Property: 'Value'
     }
   },
-  "MessageId": "Guid 1",
-  "Extensions": {}
+  MessageId: 'Guid 1',
+  Extensions: {}
 }

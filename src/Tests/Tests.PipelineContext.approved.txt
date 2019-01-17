@@ -1,25 +1,25 @@
 ﻿{
-  "SentMessages": [
+  SentMessages: [
     {
-      "SendMessage": {
-        "Property": "Value"
+      SendMessage: {
+        Property: 'Value'
       }
     },
     {
-      "SendMessage": {
-        "Property": "ValueWithDelay"
+      SendMessage: {
+        Property: 'ValueWithDelay'
       },
-      "Options": {
-        "DeliveryDelay": "1.00:00:00"
+      Options: {
+        DeliveryDelay: '1.00:00:00'
       }
     }
   ],
-  "PublishedMessages": [
+  PublishedMessages: [
     {
-      "PublishMessage": {
-        "Property": "Value"
+      PublishMessage: {
+        Property: 'Value'
       }
     }
   ],
-  "Extensions": {}
+  Extensions: {}
 }

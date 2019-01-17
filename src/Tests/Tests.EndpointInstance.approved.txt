@@ -1,4 +1,4 @@
 ﻿{
-  "EndpointStopped": true,
-  "Extensions": {}
+  EndpointStopped: true,
+  Extensions: {}
 }

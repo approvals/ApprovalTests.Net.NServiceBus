@@ -1,17 +1,17 @@
 ﻿{
-  "Message": {
-    "MessageType": "MyMessage",
-    "Metadata": {
-      "MessageType": "MyMessage"
+  Message: {
+    MessageType: 'MyMessage',
+    Metadata: {
+      MessageType: 'MyMessage'
     },
-    "Instance": {
-      "Property": "Value"
+    Instance: {
+      Property: 'Value'
     }
   },
-  "Headers": {
-    "Key": "Value"
+  Headers: {
+    Key: 'Value'
   },
-  "MessageId": "Guid 1",
-  "ReplyToAddress": "reply address",
-  "Extensions": {}
+  MessageId: 'Guid 1',
+  ReplyToAddress: 'reply address',
+  Extensions: {}
 }
