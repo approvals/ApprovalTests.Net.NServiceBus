@@ -9,14 +9,14 @@ namespace NServiceBus.ApprovalTests
     {
         static TestContextVerifier()
         {
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageHandler);
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageBeingHandled);
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.MessageMetadata);
-            SerializerBuilder.AddIgnore<TestableInvokeHandlerContext>(x => x.HandleCurrentMessageLaterWasCalled);
-            SerializerBuilder.AddIgnore<TestableOutgoingLogicalMessageContext>(x => x.RoutingStrategies);
-            SerializerBuilder.AddIgnore<TestableOutgoingPhysicalMessageContext>(x => x.RoutingStrategies);
-            SerializerBuilder.AddIgnore<TestableRoutingContext>(x => x.RoutingStrategies);
-            SerializerBuilder.AddIgnore<IBuilder>();
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageHandler);
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageBeingHandled);
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageMetadata);
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.HandleCurrentMessageLaterWasCalled);
+            SerializerBuilder.IgnoreMember<TestableOutgoingLogicalMessageContext>(x => x.RoutingStrategies);
+            SerializerBuilder.IgnoreMember<TestableOutgoingPhysicalMessageContext>(x => x.RoutingStrategies);
+            SerializerBuilder.IgnoreMember<TestableRoutingContext>(x => x.RoutingStrategies);
+            SerializerBuilder.IgnoreMembersWithType<IBuilder>();
         }
 
         static JsonSerializerSettings BuildSerializer()

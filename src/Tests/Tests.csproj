@@ -3,9 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <Optimize>False</Optimize>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="3.0.18" />
