@@ -12,7 +12,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NServiceBus.Testing" Version="7.0.0" />
+    <PackageReference Include="NServiceBus.Testing" Version="7.1.0" />
     <PackageReference Include="ObjectApproval" Version="6.0.1" />
   </ItemGroup>
 </Project>
