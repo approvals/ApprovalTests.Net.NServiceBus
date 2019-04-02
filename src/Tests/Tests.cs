@@ -19,7 +19,7 @@ public class Tests
     {
         var context = new TestableAuditContext();
         context.AddedAuditData.Add("Key", "Value");
-        TestContextVerifier.Verify(context, new {Property="Value"});
+        context.Verify(new {Property="Value"});
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public class Tests
     {
         var context = new TestableAuditContext();
         context.AddedAuditData.Add("Key", "Value");
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -35,7 +35,7 @@ public class Tests
     {
         var context = new TestableBatchDispatchContext();
         context.Operations.Add(BuildTransportOperation());
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
 
@@ -44,7 +44,7 @@ public class Tests
     {
         var context = new TestableBehaviorContextImp();
         context.Extensions.AddDeliveryConstraint(new DelayDeliveryWith(TimeSpan.FromDays(1)));
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     public class TestableBehaviorContextImp : TestableBehaviorContext
@@ -56,7 +56,7 @@ public class Tests
     {
         var context = new TestableDispatchContext();
         context.Operations.Add(BuildTransportOperation());
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -64,7 +64,7 @@ public class Tests
     {
         var context = new TestableEndpointInstance();
         await context.Stop();
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class Tests
             Address = "The address",
             Message = BuildOutgoingMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -86,7 +86,7 @@ public class Tests
             Message = BuildLogicalMessage(),
             Headers = new Dictionary<string, string> {{"Key", "Value"}}
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -96,7 +96,7 @@ public class Tests
         {
             Message = BuildIncomingMessage(),
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -106,14 +106,14 @@ public class Tests
         {
             Headers = new Dictionary<string, string> {{"Key", "Value"}},
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
     public void MessageHandlerContext()
     {
         var context = new TestableMessageHandlerContext();
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -125,7 +125,7 @@ public class Tests
         await context.Reply(new ReplyMessage {Property = "Value"});
         await context.Send(new SendMessage {Property = "Value"});
         await context.ForwardCurrentMessageTo("newDestination");
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -138,7 +138,7 @@ public class Tests
         var unsubscribeOptions = new UnsubscribeOptions();
         unsubscribeOptions.RequireImmediateDispatch();
         await context.Unsubscribe(typeof(MyMessage), unsubscribeOptions);
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -146,7 +146,7 @@ public class Tests
     {
         var context = new TestableOutgoingContext();
         context.Headers.Add("Key", "Value");
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -156,7 +156,7 @@ public class Tests
         {
             Message = BuildOutgoingLogicalMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -166,7 +166,7 @@ public class Tests
         {
             Body = new byte[] {1}
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -176,7 +176,7 @@ public class Tests
         {
             Message = BuildOutgoingLogicalMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -186,7 +186,7 @@ public class Tests
         {
             Message = BuildOutgoingLogicalMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -196,7 +196,7 @@ public class Tests
         {
             Message = BuildOutgoingLogicalMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -208,7 +208,7 @@ public class Tests
         var options = new SendOptions();
         options.DelayDeliveryWith(TimeSpan.FromDays(1));
         await context.Send(new SendMessage {Property = "ValueWithDelay"},options);
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -218,7 +218,7 @@ public class Tests
         {
             Message = BuildOutgoingMessage()
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -228,7 +228,7 @@ public class Tests
         {
             EventType = typeof(MyMessage)
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -238,7 +238,7 @@ public class Tests
         {
             Message = BuildIncomingMessage(), ReceiveOperationAborted = true
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     [Fact]
@@ -248,7 +248,7 @@ public class Tests
         {
             EventType = typeof(MyMessage)
         };
-        TestContextVerifier.Verify(context);
+        context.Verify();
     }
 
     static TransportOperation BuildTransportOperation()
