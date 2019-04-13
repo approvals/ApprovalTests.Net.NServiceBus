@@ -11,8 +11,10 @@ using NServiceBus.Testing;
 using NServiceBus.Transport;
 using NServiceBus.Unicast.Messages;
 using Xunit;
+using Xunit.Abstractions;
 
-public class Tests
+public class Tests :
+    XunitLoggingBase
 {
     [Fact]
     public void ExtraState()
@@ -278,6 +280,11 @@ public class Tests
     static LogicalMessage BuildLogicalMessage()
     {
         return new LogicalMessage(new MessageMetadata(typeof(MyMessage)), new MyMessage {Property = "Value"});
+    }
+
+    public Tests(ITestOutputHelper output) : 
+        base(output)
+    {
     }
 }
 
