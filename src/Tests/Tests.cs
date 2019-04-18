@@ -152,6 +152,50 @@ public class Tests :
     }
 
     [Fact]
+    public async Task Saga()
+    {
+        var saga = new MySaga
+        {
+            Data = new MySagaData()
+        };
+        var context = new TestableMessageHandlerContext();
+
+        await saga.Handle(new MySagaMessage(), context);
+
+        context.Verify(saga.Data);
+    }
+
+    public class MySaga: NServiceBus.Saga<MySagaData>,
+        IHandleMessages<MySagaMessage>,
+        IHandleTimeouts<MySagaMessage>
+    {
+        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<MySagaData> mapper)
+        {
+        }
+
+        public async Task Handle(MySagaMessage message, IMessageHandlerContext context)
+        {
+            Data.Member = "the data";
+            await context.Reply(new MySagaMessage());
+            await RequestTimeout<MySagaMessage>(context, TimeSpan.FromHours(1));
+        }
+
+        public Task Timeout(MySagaMessage state, IMessageHandlerContext context)
+        {
+            return Task.CompletedTask;
+        }
+    }
+
+    public class MySagaMessage
+    {
+    }
+
+    public class MySagaData : ContainSagaData
+    {
+        public string Member { get; set; }
+    }
+
+    [Fact]
     public void OutgoingLogicalMessageContext()
     {
         var context = new TestableOutgoingLogicalMessageContext
@@ -282,7 +326,7 @@ public class Tests :
         return new LogicalMessage(new MessageMetadata(typeof(MyMessage)), new MyMessage {Property = "Value"});
     }
 
-    public Tests(ITestOutputHelper output) : 
+    public Tests(ITestOutputHelper output) :
         base(output)
     {
     }

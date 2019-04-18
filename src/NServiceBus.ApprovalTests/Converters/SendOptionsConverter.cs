@@ -38,7 +38,7 @@ class SendOptionsConverter : JsonConverter
             serializer.Serialize(writer, messageId);
         }
 
-        var headers = options.GetHeaders();
+        var headers = options.GetCleanedHeaders();
         if (headers.Any())
         {
             writer.WritePropertyName("Headers");

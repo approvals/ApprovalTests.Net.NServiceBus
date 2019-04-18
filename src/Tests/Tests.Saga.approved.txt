@@ -1,0 +1,55 @@
+﻿{
+  ExtraState: {
+    Member: 'the data'
+  },
+  NsbTestContext: {
+    RepliedMessages: [
+      {
+        Tests+MySagaMessage: {}
+      }
+    ],
+    MessageId: 'Guid 1',
+    ReplyToAddress: 'reply address',
+    TimeoutMessages: [
+      {
+        Within: '01:00:00',
+        Tests+MySagaMessage: {},
+        Options: {
+          DeliveryDelay: '01:00:00',
+          Headers: {
+            NServiceBus.SagaId: 'Guid 2',
+            NServiceBus.IsSagaTimeoutMessage: 'True',
+            NServiceBus.SagaType: 'Tests+MySaga'
+          },
+          Extensions: {
+            Stash: {
+              NServiceBus.UnicastSendRouter+State: {
+                Option: 'RouteToAnyInstanceOfThisEndpoint'
+              }
+            }
+          }
+        }
+      }
+    ],
+    SentMessages: [
+      {
+        Tests+MySagaMessage: {},
+        Options: {
+          DeliveryDelay: '01:00:00',
+          Headers: {
+            NServiceBus.SagaId: 'Guid 2',
+            NServiceBus.IsSagaTimeoutMessage: 'True',
+            NServiceBus.SagaType: 'Tests+MySaga'
+          },
+          Extensions: {
+            Stash: {
+              NServiceBus.UnicastSendRouter+State: {
+                Option: 'RouteToAnyInstanceOfThisEndpoint'
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
