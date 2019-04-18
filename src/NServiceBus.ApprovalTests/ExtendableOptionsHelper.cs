@@ -11,13 +11,18 @@ static class ExtendableOptionsHelper
         var dictionary = new Dictionary<string, string>();
         foreach (var header in options.GetHeaders())
         {
+            var key = header.Key;
+            if (key.StartsWith("NServiceBus."))
+            {
+                key = key.Substring(12);
+            }
             if (header.Key == Headers.SagaType)
             {
-                dictionary.Add(header.Key, Type.GetType(header.Value, throwOnError: true).FullName);
+                dictionary.Add(key, Type.GetType(header.Value, throwOnError: true).FullName);
                 continue;
             }
 
-            dictionary.Add(header.Key, header.Value);
+            dictionary.Add(key, header.Value);
         }
 
         return dictionary;

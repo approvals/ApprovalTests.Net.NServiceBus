@@ -7,16 +7,12 @@ class ContextBagConverter : JsonConverter
 {
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
+        var contextBag = (ContextBag)value;
         writer.WriteStartObject();
-        if (ContextBagHelper.TryGetStash(value, out var stash))
+        foreach (var pair in contextBag .GetValues())
         {
-            writer.WritePropertyName("Stash");
-            serializer.Serialize(writer, stash);
-        }
-        if (ContextBagHelper.TryGetParentBag(value, out var parentBag))
-        {
-            writer.WritePropertyName("Parent");
-            serializer.Serialize(writer, parentBag);
+            writer.WritePropertyName(pair.Key);
+            serializer.Serialize(writer, pair.Value);
         }
 
         writer.WriteEndObject();

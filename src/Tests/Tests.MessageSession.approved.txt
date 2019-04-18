@@ -4,10 +4,8 @@
       MessageType: 'MyMessage',
       Options: {
         Extensions: {
-          Stash: {
-            NServiceBus.RoutingToDispatchConnector+State: {
-              ImmediateDispatch: true
-            }
+          NServiceBus.RoutingToDispatchConnector+State: {
+            ImmediateDispatch: true
           }
         }
       }
@@ -18,10 +16,8 @@
       MessageType: 'MyMessage',
       Options: {
         Extensions: {
-          Stash: {
-            NServiceBus.RoutingToDispatchConnector+State: {
-              ImmediateDispatch: true
-            }
+          NServiceBus.RoutingToDispatchConnector+State: {
+            ImmediateDispatch: true
           }
         }
       }

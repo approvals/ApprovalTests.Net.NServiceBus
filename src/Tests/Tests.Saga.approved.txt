@@ -17,15 +17,13 @@
         Options: {
           DeliveryDelay: '01:00:00',
           Headers: {
-            NServiceBus.SagaId: 'Guid 2',
-            NServiceBus.IsSagaTimeoutMessage: 'True',
-            NServiceBus.SagaType: 'Tests+MySaga'
+            SagaId: 'Guid 2',
+            IsSagaTimeoutMessage: 'True',
+            SagaType: 'Tests+MySaga'
           },
           Extensions: {
-            Stash: {
-              NServiceBus.UnicastSendRouter+State: {
-                Option: 'RouteToAnyInstanceOfThisEndpoint'
-              }
+            NServiceBus.UnicastSendRouter+State: {
+              Option: 'RouteToAnyInstanceOfThisEndpoint'
             }
           }
         }
@@ -37,15 +35,13 @@
         Options: {
           DeliveryDelay: '01:00:00',
           Headers: {
-            NServiceBus.SagaId: 'Guid 2',
-            NServiceBus.IsSagaTimeoutMessage: 'True',
-            NServiceBus.SagaType: 'Tests+MySaga'
+            SagaId: 'Guid 2',
+            IsSagaTimeoutMessage: 'True',
+            SagaType: 'Tests+MySaga'
           },
           Extensions: {
-            Stash: {
-              NServiceBus.UnicastSendRouter+State: {
-                Option: 'RouteToAnyInstanceOfThisEndpoint'
-              }
+            NServiceBus.UnicastSendRouter+State: {
+              Option: 'RouteToAnyInstanceOfThisEndpoint'
             }
           }
         }

@@ -41,6 +41,19 @@ static class ContextBagHelper
         return false;
     }
 
+    public static IEnumerable<KeyValuePair<string, object>> GetValues(this ContextBag value)
+    {
+        do
+        {
+            var stash = (Dictionary<string, object>) stashField.GetValue(value);
+            foreach (var item in stash)
+            {
+                 yield return new KeyValuePair<string, object>(item.Key, item.Value);
+            }
+            value = (ContextBag) parentBagField.GetValue(value);
+        } while (value != null);
+    }
+
     public static bool TryGetParentBag(object value, out ContextBag parentBag)
     {
         parentBag = (ContextBag) parentBagField.GetValue(value);
