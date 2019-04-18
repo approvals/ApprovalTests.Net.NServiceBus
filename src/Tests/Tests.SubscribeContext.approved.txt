@@ -1,4 +1,3 @@
 ﻿{
-  EventType: 'MyMessage',
-  Extensions: {}
+  EventType: 'MyMessage'
 }

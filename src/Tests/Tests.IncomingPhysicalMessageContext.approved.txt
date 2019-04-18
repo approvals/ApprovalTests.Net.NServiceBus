@@ -8,6 +8,5 @@
     Body: 'AQ=='
   },
   MessageId: 'Guid 1',
-  ReplyToAddress: 'reply address',
-  Extensions: {}
+  ReplyToAddress: 'reply address'
 }

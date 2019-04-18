@@ -5,6 +5,5 @@
       Property: 'Value'
     }
   },
-  MessageId: 'Guid 1',
-  Extensions: {}
+  MessageId: 'Guid 1'
 }

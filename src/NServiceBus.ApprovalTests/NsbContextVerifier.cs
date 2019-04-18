@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NServiceBus.Extensibility;
 using NServiceBus.ObjectBuilder;
 using NServiceBus.Testing;
 using ObjectApproval;
@@ -15,6 +16,7 @@ namespace NServiceBus.ApprovalTests
             SerializerBuilder.IgnoreMember<TestableOutgoingLogicalMessageContext>(x => x.RoutingStrategies);
             SerializerBuilder.IgnoreMember<TestableOutgoingPhysicalMessageContext>(x => x.RoutingStrategies);
             SerializerBuilder.IgnoreMember<TestableRoutingContext>(x => x.RoutingStrategies);
+            SerializerBuilder.IgnoreInstance<ContextBag>(x => !ContextBagHelper.HasContent(x));
             SerializerBuilder.IgnoreMembersWithType<IBuilder>();
         }
 
@@ -29,7 +31,6 @@ namespace NServiceBus.ApprovalTests
             converters.Add(new TimeoutMessageConverter());
             converters.Add(new SubscriptionConverter());
             converters.Add(new OutgoingMessageConverter());
-            converters.Add(new TypeConverter());
             return settings;
         }
 

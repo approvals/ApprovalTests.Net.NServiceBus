@@ -1,4 +1,3 @@
 ﻿{
-  EndpointStopped: true,
-  Extensions: {}
+  EndpointStopped: true
 }

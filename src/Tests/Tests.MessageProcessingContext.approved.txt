@@ -27,6 +27,5 @@
         Property: 'Value'
       }
     }
-  ],
-  Extensions: {}
+  ]
 }

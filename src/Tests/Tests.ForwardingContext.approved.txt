@@ -6,6 +6,5 @@
       key: 'value'
     }
   },
-  Address: 'The address',
-  Extensions: {}
+  Address: 'The address'
 }
