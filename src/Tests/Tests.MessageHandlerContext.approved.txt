@@ -1,4 +1,3 @@
 ﻿{
-  MessageId: 'Guid 1',
-  ReplyToAddress: 'reply address'
+  MessageId: 'Guid 1'
 }

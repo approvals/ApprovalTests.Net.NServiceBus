@@ -9,7 +9,6 @@
       }
     ],
     MessageId: 'Guid 1',
-    ReplyToAddress: 'reply address',
     TimeoutMessages: [
       {
         Within: '01:00:00',
