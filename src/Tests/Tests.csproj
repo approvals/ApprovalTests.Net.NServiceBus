@@ -11,7 +11,6 @@
     <PackageReference Include="NServiceBus.Testing" Version="7.1.0" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="XunitLogger" Version="1.3.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <ProjectReference Include="..\NServiceBus.ApprovalTests\NServiceBus.ApprovalTests.csproj" />
   </ItemGroup>
 </Project>
