@@ -1,5 +1,5 @@
 ﻿{
-  MessageId: 'Guid 1',
+  MessageId: Guid_1,
   Headers: {
     Key: 'Value'
   }

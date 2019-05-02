@@ -4,6 +4,6 @@
   },
   AuditAddress: 'audit queue address',
   Message: {
-    MessageId: 'Guid 1'
+    MessageId: Guid_1
   }
 }
