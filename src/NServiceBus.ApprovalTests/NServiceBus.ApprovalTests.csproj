@@ -10,6 +10,6 @@
     <PackageReference Include="NServiceBus" Version="7.1.7" />
     <PackageReference Condition="$(Configuration)=='Release'" Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All" />
     <PackageReference Include="NServiceBus.Testing" Version="7.1.0" />
-    <PackageReference Include="ObjectApproval" Version="8.3.0" />
+    <PackageReference Include="ObjectApproval" Version="9.1.0" />
   </ItemGroup>
 </Project>
