@@ -25,7 +25,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
-## The nuget package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
+## The nuget package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
 
 https://nuget.org/packages/NServiceBus.ApprovalTests/
 
