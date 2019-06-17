@@ -14,7 +14,7 @@ namespace NServiceBus.ApprovalTests
             SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageBeingHandled);
             SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageMetadata);
             SerializerBuilder.IgnoreMember<IMessageProcessingContext>(x => x.ReplyToAddress);
-            SerializerBuilder.IgnoreMember(typeof(IEndpointInstance), "EndpointStopped");
+            SerializerBuilder.IgnoreMember<TestableEndpointInstance>(x => x.EndpointStopped);
             SerializerBuilder.IgnoreMember<TestableOutgoingLogicalMessageContext>(x => x.RoutingStrategies);
             SerializerBuilder.IgnoreMember<TestableOutgoingPhysicalMessageContext>(x => x.RoutingStrategies);
             SerializerBuilder.IgnoreMember<TestableRoutingContext>(x => x.RoutingStrategies);
