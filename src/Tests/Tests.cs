@@ -65,7 +65,7 @@ public class Tests :
     public async Task EndpointInstance()
     {
         var context = new TestableEndpointInstance();
-        await context.Stop();
+        await ((IMessageSession)context).Send(new SendMessage {Property = "Value"});
         context.Verify();
     }
 

@@ -1,3 +1,9 @@
 ﻿{
-  EndpointStopped: true
+  SentMessages: [
+    {
+      SendMessage: {
+        Property: 'Value'
+      }
+    }
+  ]
 }
