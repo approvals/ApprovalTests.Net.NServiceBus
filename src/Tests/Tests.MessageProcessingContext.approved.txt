@@ -9,10 +9,6 @@
   ForwardedMessages: [
     'newDestination'
   ],
-  MessageHeaders: {
-    Key: 'Value'
-  },
-  MessageId: Guid_1,
   SentMessages: [
     {
       SendMessage: {

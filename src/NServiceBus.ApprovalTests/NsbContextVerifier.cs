@@ -10,6 +10,9 @@ namespace NServiceBus.ApprovalTests
     {
         static TestContextVerifier()
         {
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageHeaders);
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.Extensions);
+            SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageId);
             SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageHandler);
             SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageBeingHandled);
             SerializerBuilder.IgnoreMember<TestableInvokeHandlerContext>(x => x.MessageMetadata);

@@ -6,6 +6,5 @@
       NServiceBus.MessageId: 'MessageId'
     },
     Body: 'AQ=='
-  },
-  MessageId: Guid_1
+  }
 }

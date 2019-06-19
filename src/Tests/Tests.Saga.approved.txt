@@ -8,7 +8,6 @@
         Tests+MySagaMessage: {}
       }
     ],
-    MessageId: Guid_1,
     TimeoutMessages: [
       {
         Within: '01:00:00',
@@ -16,7 +15,7 @@
         Options: {
           DeliveryDelay: '01:00:00',
           Headers: {
-            SagaId: Guid_2,
+            SagaId: Guid_1,
             IsSagaTimeoutMessage: 'True',
             SagaType: 'Tests+MySaga'
           },
@@ -34,7 +33,7 @@
         Options: {
           DeliveryDelay: '01:00:00',
           Headers: {
-            SagaId: Guid_2,
+            SagaId: Guid_1,
             IsSagaTimeoutMessage: 'True',
             SagaType: 'Tests+MySaga'
           },

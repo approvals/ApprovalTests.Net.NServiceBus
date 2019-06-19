@@ -10,6 +10,5 @@
   },
   Headers: {
     Key: 'Value'
-  },
-  MessageId: Guid_1
+  }
 }
