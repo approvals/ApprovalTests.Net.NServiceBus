@@ -102,12 +102,13 @@ public class Tests :
     }
 
     [Fact]
-    public void InvokeHandlerContext()
+    public async Task InvokeHandlerContext()
     {
         var context = new TestableInvokeHandlerContext
         {
             Headers = new Dictionary<string, string> {{"Key", "Value"}},
         };
+        await context.Send(new MyMessage());
         context.Verify();
     }
 

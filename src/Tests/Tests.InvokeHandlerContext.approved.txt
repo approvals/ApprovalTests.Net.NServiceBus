@@ -1,5 +1,7 @@
 ﻿{
-  Headers: {
-    Key: 'Value'
-  }
+  SentMessages: [
+    {
+      MyMessage: {}
+    }
+  ]
 }
