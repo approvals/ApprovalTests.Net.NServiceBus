@@ -51,7 +51,7 @@ namespace NServiceBus.ApprovalTests
             Guard.AgainstNull(context, nameof(context));
             if (state == null)
             {
-                ObjectApprover.VerifyWithJson(context, jsonSerializerSettings: BuildSerializer(), scrubber: scrubber);
+                ObjectApprover.Verify(context, jsonSerializerSettings: BuildSerializer(), scrubber: scrubber);
                 return;
             }
 
@@ -60,7 +60,7 @@ namespace NServiceBus.ApprovalTests
                 NsbTestContext = context,
                 ExtraState = state
             };
-            ObjectApprover.VerifyWithJson(wrapper, jsonSerializerSettings: BuildSerializer(), scrubber: scrubber);
+            ObjectApprover.Verify(wrapper, jsonSerializerSettings: BuildSerializer(), scrubber: scrubber);
         }
 
         public static void Verify(this TestableBatchDispatchContext context, object state = null, Func<string, string> scrubber = null)
