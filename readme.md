@@ -1,4 +1,4 @@
-## <img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.ApprovalTests/master/src/icon.png" height="30px"> Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to [NServiceBus](https://docs.particular.net/nservicebus/).
+## <img src="/src/icon.png" height="30px"> Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to [NServiceBus](https://docs.particular.net/nservicebus/).
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -25,9 +25,9 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
-## The nuget package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
+## NuGet package
 
-https://nuget.org/packages/NServiceBus.ApprovalTests/
+https://nuget.org/packages/NServiceBus.ApprovalTests/ [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
 
 
 ## Documentation
@@ -37,4 +37,4 @@ https://docs.particular.net/nuget/NServiceBus.ApprovalTests
 
 ## Icon
 
-<a href="http://thenounproject.com/term/approval/1759519/" target="_blank">Approval</a> designed by [Mike Zuidgeest](https://thenounproject.com/zuidgeest/) from <a href="http://thenounproject.com/" target="_blank">The Noun Project</a>
+[Approval](https://thenounproject.com/term/approval/1759519/) designed by [Mike Zuidgeest](https://thenounproject.com/zuidgeest/) from [The Noun Project](https://thenounproject.com/).
