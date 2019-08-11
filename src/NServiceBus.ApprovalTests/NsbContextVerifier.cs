@@ -1,9 +1,9 @@
 ﻿using System;
+using ObjectApproval;
 using Newtonsoft.Json;
 using NServiceBus.Extensibility;
 using NServiceBus.ObjectBuilder;
 using NServiceBus.Testing;
-using ObjectApproval;
 
 namespace NServiceBus.ApprovalTests
 {
