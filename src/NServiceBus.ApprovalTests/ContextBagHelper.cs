@@ -30,7 +30,7 @@ static class ContextBagHelper
         return false;
     }
 
-    public static bool TryGetStash(object value, out Dictionary<string, object> stash)
+    static bool TryGetStash(object value, out Dictionary<string, object> stash)
     {
         stash = (Dictionary<string, object>) stashField.GetValue(value);
         if (stash.Any())
@@ -54,7 +54,7 @@ static class ContextBagHelper
         } while (value != null);
     }
 
-    public static bool TryGetParentBag(object value, out ContextBag parentBag)
+    static bool TryGetParentBag(object value, out ContextBag parentBag)
     {
         parentBag = (ContextBag) parentBagField.GetValue(value);
         return parentBag != null;
