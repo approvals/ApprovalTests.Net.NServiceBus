@@ -44,11 +44,6 @@ class ExtendableOptionsConverter : JsonConverter
         }
     }
 
-    public override object ReadJson(JsonReader reader, Type type, object value, JsonSerializer serializer)
-    {
-        throw new NotImplementedException();
-    }
-
     public override bool CanConvert(Type type)
     {
         return typeof(ExtendableOptions).IsAssignableFrom(type);
