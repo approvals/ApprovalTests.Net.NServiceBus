@@ -1,0 +1,10 @@
+﻿{
+  ExtraState: {},
+  NsbTestContext: {},
+  LogMessages: [
+    {
+      Level: 'Warn',
+      Message: 'The log message'
+    }
+  ]
+}

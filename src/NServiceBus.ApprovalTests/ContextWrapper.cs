@@ -1,8 +1,8 @@
-﻿namespace NServiceBus.ApprovalTests
+﻿using System.Collections.Generic;
+
+class ContextWrapper
 {
-    class ContextWrapper
-    {
-        public object ExtraState;
-        public object NsbTestContext;
-    }
+    public object ExtraState;
+    public object NsbTestContext;
+    public List<LogMessage> LogMessages;
 }

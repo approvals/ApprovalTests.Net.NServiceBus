@@ -5,6 +5,7 @@ using NServiceBus;
 using NServiceBus.ApprovalTests;
 using NServiceBus.DelayedDelivery;
 using NServiceBus.DeliveryConstraints;
+using NServiceBus.Logging;
 using NServiceBus.Pipeline;
 using NServiceBus.Routing;
 using NServiceBus.Testing;
@@ -16,6 +17,27 @@ using Xunit.Abstractions;
 public class Tests :
     XunitLoggingBase
 {
+    [Fact]
+    public async Task Logging()
+    {
+        var handler = new MyHandlerWithLogging();
+        var context = new TestableMessageHandlerContext();
+
+        await handler.Handle(new MyMessage(), context);
+        context.Verify(context, includeLogMessages: LogLevel.Debug);
+    }
+
+    class MyHandlerWithLogging :
+        IHandleMessages<MyMessage>
+    {
+        static ILog logger = LogManager.GetLogger<MyHandlerWithLogging>();
+        public Task Handle(MyMessage message, IMessageHandlerContext context)
+        {
+            logger.Warn("The log message");
+            return Task.CompletedTask;
+        }
+    }
+
     [Fact]
     public void ExtraState()
     {
