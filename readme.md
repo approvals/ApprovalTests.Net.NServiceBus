@@ -27,7 +27,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 ## NuGet package
 
-https://nuget.org/packages/NServiceBus.ApprovalTests/ [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
+https://nuget.org/packages/NServiceBus.ApprovalTests/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
 
 
 ## Documentation
