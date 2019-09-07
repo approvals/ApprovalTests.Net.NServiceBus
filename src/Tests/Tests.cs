@@ -15,7 +15,7 @@ using Xunit;
 using Xunit.Abstractions;
 
 public class Tests :
-    XunitLoggingBase
+    XunitApprovalBase
 {
     [Fact]
     public async Task Logging()
