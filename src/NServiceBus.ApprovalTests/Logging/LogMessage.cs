@@ -4,7 +4,7 @@ using NServiceBus.Logging;
 
 class LogMessage
 {
-    public LogMessage(LogLevel level, string message, Exception exception = null)
+    public LogMessage(LogLevel level, string message, Exception? exception = null)
     {
         Guard.AgainstNull(message, nameof(message));
         Level = level;
@@ -13,7 +13,7 @@ class LogMessage
         Args = Array.Empty<object>();
     }
 
-    public LogMessage(LogLevel level, string format, IReadOnlyList<object> args, Exception exception = null)
+    public LogMessage(LogLevel level, string format, IReadOnlyList<object> args, Exception? exception = null)
     {
         Guard.AgainstNull(format, nameof(format));
         Guard.AgainstNull(args, nameof(args));
@@ -26,7 +26,7 @@ class LogMessage
 
     public readonly LogLevel Level;
     public readonly string Message;
-    public readonly Exception Exception;
-    public readonly string Format;
+    public readonly Exception? Exception;
+    public readonly string? Format;
     public readonly IReadOnlyList<object> Args;
 }

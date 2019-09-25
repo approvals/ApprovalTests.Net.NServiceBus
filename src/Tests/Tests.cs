@@ -188,7 +188,8 @@ public class Tests :
         context.Verify(saga.Data);
     }
 
-    public class MySaga: NServiceBus.Saga<MySagaData>,
+    public class MySaga:
+        NServiceBus.Saga<MySagaData>,
         IHandleMessages<MySagaMessage>,
         IHandleTimeouts<MySagaMessage>
     {
@@ -213,9 +214,10 @@ public class Tests :
     {
     }
 
-    public class MySagaData : ContainSagaData
+    public class MySagaData :
+        ContainSagaData
     {
-        public string Member { get; set; }
+        public string? Member { get; set; }
     }
 
     [Fact]
@@ -357,20 +359,20 @@ public class Tests :
 
 public class MyMessage
 {
-    public string Property { get; set; }
+    public string? Property { get; set; }
 }
 
 public class PublishMessage
 {
-    public string Property { get; set; }
+    public string? Property { get; set; }
 }
 
 public class ReplyMessage
 {
-    public string Property { get; set; }
+    public string? Property { get; set; }
 }
 
 public class SendMessage
 {
-    public string Property { get; set; }
+    public string? Property { get; set; }
 }

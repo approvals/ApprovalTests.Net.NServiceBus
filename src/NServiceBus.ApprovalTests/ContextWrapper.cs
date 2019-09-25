@@ -2,7 +2,12 @@
 
 class ContextWrapper
 {
-    public object ExtraState;
+    public object? ExtraState;
     public object NsbTestContext;
-    public List<LogMessage> LogMessages;
+    public List<LogMessage>? LogMessages;
+
+    public ContextWrapper(object context)
+    {
+        NsbTestContext = context;
+    }
 }
