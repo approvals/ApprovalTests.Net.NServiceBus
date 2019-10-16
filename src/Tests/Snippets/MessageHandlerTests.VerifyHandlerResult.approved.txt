@@ -1,32 +1,29 @@
 ﻿{
-  "RepliedMessages": [
+  RepliedMessages: [
     {
-      "MyReplyMessage": {
-        "Property": "Value"
+      MyReplyMessage: {
+        Property: 'Value'
       }
     }
   ],
-  "ForwardedMessages": [
-    "newDestination"
+  ForwardedMessages: [
+    'newDestination'
   ],
-  "MessageId": "Guid 1",
-  "ReplyToAddress": "reply address",
-  "SentMessages": [
+  SentMessages: [
     {
-      "MySendMessage": {
-        "Property": "Value"
+      MySendMessage: {
+        Property: 'Value'
       },
-      "Options": {
-        "DeliveryDelay": "12:00:00"
+      Options: {
+        DeliveryDelay: '12:00:00'
       }
     }
   ],
-  "PublishedMessages": [
+  PublishedMessages: [
     {
-      "MyPublishMessage": {
-        "Property": "Value"
+      MyPublishMessage: {
+        Property: 'Value'
       }
     }
-  ],
-  "Extensions": {}
+  ]
 }

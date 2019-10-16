@@ -112,7 +112,7 @@ public async Task VerifyHandlerResult()
     context.Verify();
 }
 ```
-<sup>[snippet source](/src/Tests/Snippets/MessageHandlerTests.cs#L8-L20) / [anchor](#snippet-handlertest)</sup>
+<sup>[snippet source](/src/Tests/Snippets/MessageHandlerTests.cs#L10-L22) / [anchor](#snippet-handlertest)</sup>
 <!-- endsnippet -->
 
 The resulting context verification file is as follows:

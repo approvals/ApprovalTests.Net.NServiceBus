@@ -2,8 +2,10 @@
 using NServiceBus.ApprovalTests;
 using NServiceBus.Testing;
 using Xunit;
+using Xunit.Abstractions;
 
-public class MessageHandlerTests
+public class MessageHandlerTests:
+    XunitApprovalBase
 {
     #region HandlerTest
     [Fact]
@@ -18,4 +20,9 @@ public class MessageHandlerTests
         context.Verify();
     }
     #endregion
+
+    public MessageHandlerTests(ITestOutputHelper output) :
+        base(output)
+    {
+    }
 }
