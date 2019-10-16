@@ -20,7 +20,14 @@ class LogMessage
         Level = level;
         Format = format;
         Exception = exception;
-        Message = string.Format(format, args);
+        try
+        {
+            Message = string.Format(format, args);
+        }
+        catch (Exception formatException)
+        {
+            throw new Exception($"Could not format message. Format: {format}.", formatException);
+        }
         Args = args;
     }
 
