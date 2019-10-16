@@ -23,6 +23,7 @@ namespace NServiceBus.ApprovalTests
                 return context;
             }
         }
+
         internal static List<LogMessage> LogMessages
         {
             get => Context.logMessages;

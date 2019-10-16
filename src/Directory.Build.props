@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <Version>1.15.0</Version>
+    <Version>1.15.1</Version>
     <PackageTags>NServiceBus, ApprovalTests</PackageTags>
     <Description>Adds ApprovalTests (https://github.com/approvals/ApprovalTests.Net) support to verify NServiceBus Test Contexts (https://docs.particular.net/nservicebus/samples/unit-testing/).</Description>
     <PackageProjectUrl>https://docs.particular.net/nuget/NServiceBus.ApprovalTests</PackageProjectUrl>
