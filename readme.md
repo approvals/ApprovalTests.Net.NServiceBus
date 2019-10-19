@@ -5,7 +5,24 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-## <img src="/src/icon.png" height="30px"> Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to verify [NServiceBus Test Contexts](https://docs.particular.net/nservicebus/samples/unit-testing/).
+# <img src="/src/icon.png" height="30px"> NServiceBus.ApprovalTests
+
+[![Build status](https://ci.appveyor.com/api/projects/status/nohkvrf18rjb90u3/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-ApprovalTests)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
+
+Adds [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) support to verify [NServiceBus Test Contexts](https://docs.particular.net/nservicebus/samples/unit-testing/).
+
+<!-- toc -->
+## Contents
+
+  * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
+  * [Usage](#usage)
+    * [Verifying a context](#verifying-a-context)
+    * [Example behavior change](#example-behavior-change)
+<!-- endtoc -->
+
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -31,21 +48,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <!--- EndOpenCollectiveBackers -->
 
 <a href="#" id="endofbacking"></a>
-
-<!-- toc -->
-## Contents
-
-  * [NuGet package](#nuget-package)
-  * [Usage](#usage)
-    * [Verifying a context](#verifying-a-context)
-    * [Example behavior change](#example-behavior-change)
-<!-- endtoc -->
-
-
-
-## NuGet package
-
-https://nuget.org/packages/NServiceBus.ApprovalTests/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ApprovalTests.svg)](https://www.nuget.org/packages/NServiceBus.ApprovalTests/)
 
 
 ## Usage
@@ -195,6 +197,10 @@ Then the resulting visualization diff would look as follows:
 
 ![visualization diff](approvaltests-diff.png)
 
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon
