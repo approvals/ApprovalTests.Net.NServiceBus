@@ -93,7 +93,7 @@ snippet: SimpleHandlerV2
 Then the resulting visualization diff would look as follows:
 
 
-![visualization diff](approvaltests-diff.png)
+![visualization diff](/src/approvaltests-diff.png)
 
 
 ## Release Notes
