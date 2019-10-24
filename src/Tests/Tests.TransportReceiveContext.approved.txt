@@ -2,6 +2,7 @@
   ReceiveOperationAborted: true,
   Message: {
     MessageId: 'MessageId',
+    NativeMessageId: 'MessageId',
     Headers: {
       key: 'value',
       NServiceBus.MessageId: 'MessageId'
