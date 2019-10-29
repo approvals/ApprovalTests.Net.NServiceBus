@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="4.2.2" />
-    <PackageReference Include="Fody" Version="6.0.2" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.0.3" PrivateAssets="all" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="All" />
     <PackageReference Include="NServiceBus" Version="7.2.0" />
     <PackageReference Include="NServiceBus.Testing" Version="7.2.0" />
