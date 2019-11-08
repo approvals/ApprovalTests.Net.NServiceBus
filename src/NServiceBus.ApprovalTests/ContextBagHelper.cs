@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using NServiceBus.Extensibility;
@@ -54,9 +55,9 @@ static class ContextBagHelper
         } while (value != null);
     }
 
-    static bool TryGetParentBag(object value, out ContextBag parentBag)
+    static bool TryGetParentBag(object value, [NotNullWhen(true)] out ContextBag? parentBag)
     {
-        parentBag = (ContextBag) parentBagField.GetValue(value);
+        parentBag = (ContextBag?) parentBagField.GetValue(value);
         return parentBag != null;
     }
 }
