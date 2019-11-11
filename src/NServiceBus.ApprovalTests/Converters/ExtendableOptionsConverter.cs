@@ -5,15 +5,19 @@ using NServiceBus;
 using NServiceBus.Extensibility;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-class ExtendableOptionsConverter : JsonConverter
+class ExtendableOptionsConverter :
+    JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value == null)
+        {
+            return;
+        }
         var options = (ExtendableOptions) value;
         writer.WriteStartObject();
 
         WriteBaseMembers(writer, serializer, options);
-
         writer.WriteEndObject();
     }
 

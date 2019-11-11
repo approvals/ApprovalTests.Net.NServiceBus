@@ -3,10 +3,15 @@ using Newtonsoft.Json;
 using NServiceBus;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-class SendOptionsConverter : JsonConverter
+class SendOptionsConverter :
+    JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value == null)
+        {
+            return;
+        }
         var options = (SendOptions) value;
         writer.WriteStartObject();
 

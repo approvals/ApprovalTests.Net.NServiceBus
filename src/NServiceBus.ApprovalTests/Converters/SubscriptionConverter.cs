@@ -3,10 +3,15 @@ using Newtonsoft.Json;
 using NServiceBus.Testing;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-class SubscriptionConverter : JsonConverter
+class SubscriptionConverter :
+    JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value == null)
+        {
+            return;
+        }
         var subscription = (Subscription) value;
         writer.WriteStartObject();
 

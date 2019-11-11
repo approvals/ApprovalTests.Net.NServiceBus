@@ -3,18 +3,23 @@ using Newtonsoft.Json;
 using NServiceBus.Extensibility;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-class ContextBagConverter : JsonConverter
+class ContextBagConverter :
+    JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
-        var contextBag = (ContextBag)value;
+        if (value == null)
+        {
+            return;
+        }
+
+        var contextBag = (ContextBag) value;
         writer.WriteStartObject();
-        foreach (var pair in contextBag .GetValues())
+        foreach (var pair in contextBag.GetValues())
         {
             writer.WritePropertyName(pair.Key);
             serializer.Serialize(writer, pair.Value);
         }
-
         writer.WriteEndObject();
     }
 

@@ -3,14 +3,17 @@ using Newtonsoft.Json;
 using NServiceBus.Testing;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-class OutgoingMessageConverter : JsonConverter
+class OutgoingMessageConverter :
+    JsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
     {
+        if (value == null)
+        {
+            return;
+        }
         writer.WriteStartObject();
-
         WriteBaseMembers(writer, value, serializer);
-
         writer.WriteEndObject();
     }
 
